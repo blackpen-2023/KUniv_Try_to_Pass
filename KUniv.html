@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>고려대학교 합격자조회</title>
+    <link rel="stylesheet" href="./style-2.css" />
+
+    <!-- 효율문제로 Vue는 사용하지 않음. 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@2"></script>
+    -->
+  </head>
+
+  <body>
+    <form>
+      <div class="wrap">
+        <h1 class="inquiry">
+          <img src="./logo_new.png" alt="고려대학교 인재발굴처 로고" />
+        </h1>
+        <section id="MM" class="inquiry">
+          <h2>2024학년도 수시 최종 합격자 조회결과</h2>
+          <div id="alllll">
+            <table id="MM">
+              <tr>
+                <th>수험번호</th>
+                <td id="g1"></td>
+              </tr>
+              <tr>
+                <th>성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</th>
+                <td id="g2"></td>
+              </tr>
+              <tr>
+                <th>전&nbsp;&nbsp;형&nbsp;&nbsp;명</th>
+                <td id="g3">학생부종합</td>
+              </tr>
+              <tr>
+                <th>모집단위</th>
+                <td id="g4"></td>
+              </tr>
+              <tr>
+                <th>생년월일</th>
+                <td id="g567"></td>
+              </tr>
+              <tr>
+                <th>합격여부</th>
+                <td id="pass">합격</td>
+              </tr>
+            </table>
+          </div>
+
+          <div id="ac">
+            <div id="B">축하합니다. 최종 합격하셨습니다.</div>
+            <div id="M">
+              인재발굴처 홈페이지에서 최종합격자 유의사항을 반드시 확인하시기
+              바랍니다.
+            </div>
+          </div>
+
+          <p style="margin-bottom: 10px">
+            유의사항은 인재발굴처 홈페이지에서 공지합니다.
+          </p>
+
+          <a
+            style="margin-bottom: 8px"
+            href="https://oku.korea.ac.kr"
+            target="_new"
+            class="homepage"
+            ><img src="./btn_home_new.gif" alt="홈페이지 바로가기"
+          /></a>
+        </section>
+      </div>
+    </form>
+    <div style="text-align: center">
+      단순 재미를 위해 자작한 사이트입니다.<br />사용 후 생기는 불이익은
+      책임지지 않습니다.<br />수능 파이팅!
+    </div>
+    <script>
+      var snum = localStorage.getItem("snum") || "";
+      var name_ = localStorage.getItem("name_") || "";
+      var option = localStorage.getItem("option") || "";
+      var class_ = localStorage.getItem("class_") || "";
+
+      var year = localStorage.getItem("year") || "";
+      var month = localStorage.getItem("month") || "";
+      var day = localStorage.getItem("day") || "";
+
+      if (snum) {
+        document.getElementById("g1").innerText = snum;
+      } else {
+        document.getElementById("g1").innerText = "값이 없습니다.";
+      }
+
+      if (name_) {
+        document.getElementById("g2").innerText = name_;
+      } else {
+        document.getElementById("g2").innerText = "값이 없습니다.";
+      }
+
+      if (option) {
+        document.getElementById("g3").innerText = option;
+      } else {
+        document.getElementById("g3").innerText = "값이 없습니다.";
+      }
+
+      if (class_) {
+        document.getElementById("g4").innerText = class_;
+      } else {
+        document.getElementById("g4").innerText = "값이 없습니다.";
+      }
+
+      if (year && month && day) {
+        document.getElementById("g567").innerText =
+          year + " 년 " + month + " 월 " + day + " 일 ";
+      } else {
+        document.getElementById("g567").innerText = "날짜 값이 없습니다.";
+      }
+    </script>
+  </body>
+</html>

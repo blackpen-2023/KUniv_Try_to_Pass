@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- 저작권법 준수를 위해 공개하지 않음 -->
+    <!-- 사이트 내 이미지의 모든 저작권은 '고려대학교'에 있습니다. -->
+
+    <meta http-equiv="imagetoolbar" content="no" />
+    <title>2024 고려대학교 합격해보기!!</title>
+
+    <link rel="stylesheet" href="./style-1.css" />
+  </head>
+  <body>
+    <form>
+      <div class="wrap">
+        <h1 class="inquiry">
+          <img src="./logo_new.png" alt="고려대학교 인재발굴처 로고" />
+        </h1>
+
+        <!-- 모달 -->
+        <div id="myModal" class="modal">
+          <!-- 모달 내용 -->
+          <div class="modal-content">
+            <!-- 닫기 버튼 -->
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h1 style="font-size: 30px; margin-top: 50px; color: #951c3d">
+              <strong>경고합니다.</strong>
+            </h1>
+            <br />
+            <p>
+              이 사이트는 단순 재미를 위해 제작된 '가짜 사이트'입니다.<br />
+            </p>
+          </div>
+        </div>
+
+        <section id="MM" class="inquiry">
+          <h2>고려대학교 합격해보기 !</h2>
+          <table id="MM">
+            <tr>
+              <th>수험번호</th>
+              <td><input type="text" id="i1" />&nbsp;&nbsp;수험번호 입력</td>
+            </tr>
+            <tr>
+              <th>성&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;명</th>
+              <td><input type="text" id="i2" />&nbsp;&nbsp;이름 입력</td>
+            </tr>
+            <tr>
+              <th>전&nbsp;&nbsp;형&nbsp;&nbsp;명</th>
+              <td><input type="text" id="i3" />&nbsp;&nbsp;전형 입력</td>
+            </tr>
+            <tr>
+              <th>모집단위</th>
+              <td><input type="text" id="i4" />&nbsp;&nbsp;학과 입력</td>
+            </tr>
+            <tr>
+              <th>생년월일</th>
+              <td>
+                <input style="width: 50px" id="i5" /> 년
+                <input style="width: 20px" id="i6" /> 월
+                <input style="width: 20px" id="i7" /> 일
+              </td>
+            </tr>
+          </table>
+          <div id="ac">
+            <div id="B">단순 재미를 위해 제작된 사이트입니다.</div>
+            <div id="M">사용 후 생기는 불이익은 책임지지 않습니다.</div>
+            <br />
+            <div id="B">수능 파이팅!</div>
+            <br /><br />
+            <a onclick="sendValue()"
+              ><img src="./btn_search.gif" alt="검색"
+            /></a>
+            <!--
+            <a href="javascript:document.forms[0].reset()"
+              ><img src="./btn_reset.gif" alt="초기화"
+            /></a>-->
+          </div>
+
+          <p style="margin-bottom: 10px">
+            유의사항은 인재발굴처 홈페이지에서 공지합니다.
+          </p>
+          <!-- <a href="http://oku.korea.ac.kr" target="_new" class="homepage"><img src="./images/btn_home.gif" alt="입학처 홈페이지 바로가기" /></a>-->
+          <a
+            style="margin-bottom: 8px"
+            href="https://oku.korea.ac.kr"
+            target="_new"
+            class="homepage"
+            ><img src="./btn_home_new.gif" alt="홈페이지 바로가기"
+          /></a>
+        </section>
+      </div>
+    </form>
+    <div style="text-align: center">BAE GYUMIN - Edit</div>
+    <script>
+      // modal
+      window.onload = function () {
+        document.getElementById("myModal").style.display = "block";
+      };
+
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // 데이터 이동
+      function sendValue() {
+        var s1 = document.getElementById("i1").value;
+        var s2 = document.getElementById("i2").value;
+        var s3 = document.getElementById("i3").value;
+        var s4 = document.getElementById("i4").value;
+        var s5 = document.getElementById("i5").value;
+        var s6 = document.getElementById("i6").value;
+        var s7 = document.getElementById("i7").value;
+
+        localStorage.setItem("snum", s1);
+        localStorage.setItem("name_", s2);
+        localStorage.setItem("option", s3);
+        localStorage.setItem("class_", s4);
+        localStorage.setItem("year", s5);
+        localStorage.setItem("month", s6);
+        localStorage.setItem("day", s7);
+
+        window.location.href = "KUniv.html";
+      }
+    </script>
+  </body>
+</html>
